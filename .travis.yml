@@ -13,3 +13,10 @@ jobs:
   - env: RAKE_TASK="yum:build" YUM_TARGETS="centos-8"
 script:
   - rake $RAKE_TASK
+deploy:
+  provider: releases
+  api_key:
+    secure: jU67IMYmbVNudf09/SOdSmdnddrxClpGC+mtBcNoX1JwmptGi+AQDzDt8/UxvnUe9cYDgQaFNKWPQ0t0H7y2JkV2JgtRI1ymDBw/se0taSgKliLwa3zE1E2mIeU08+SeqtucM5PUPWDUhEyDRu9f0/CG2WCt/G7iTGpKSr95tvAXIV+QlaflekVMKxi6vDQDktN0fKPF3r78KZiKJZPhjrWEWughRCfTMIAiOa3XpvIpZxg2iKqidI8S96Q9EPNNrESHbuOBTtgrnW2Cussc/HHKwKw8th4vCNcKAQHvH1S2eDURoM71AJgMlsqtwDrDnp81XU/13Fkjqe+gET0rkfA7zg4qM5cMmcIpmV9ikQyuaXyyChnimGyf2fD+AjCAfBsplOTl40QFofifF6PRWHND2nHv9SGZF0KAvV+4A3INQX852H4bITSWtl3LffrZsouIGkLwzmqwVQOq4Dk3F+VHoHwGOun2LqIb1mIyz8xBQT8vgquoaUhILC3WbLokaWlpEEOV6a5M38YljFvb+2dPWJwVZaGLqTLFcTtPygTIOBiBTDL0GopI35rLt7pOmbkjK5h2uOfI1nD8X0mP1sydmsgI6oD3H2acsqXmhYQo3P3K2Z3nw4Y0Fnk3h0qpHzYvFVrY4/JUgsn2KdOx8vcagNb3k0z/v2mCWg5/yZA=
+  file: td-agent/(apt|yum)/repositories/**/*.(rpm|deb)
+  on:
+    repo: clear-code/td-agent-builder
