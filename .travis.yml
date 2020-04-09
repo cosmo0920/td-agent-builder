@@ -20,7 +20,8 @@ before_deploy:
   - echo "${RELEASE_DIRECTORY}"
 deploy:
   provider: releases
-  token: "${TRAVIS_GITHUB_CREDENTIALS}"
+  token:
+    secure: "Z77Lt0KX5GHyBK1oRCLY3E88g12uRJX1GaYbrtZ0gG1P2q7soq07fW6trROBx6N3xN7WYwCm4S68VRd6CDBcTjXcs3dcWGykF8ymuApA7DMnv6u2lh+U0W6ERLdsN1Lk3SbN6lgnpKaKoF/E9uAbbRJJQMwTOkK88NKEWPq17TgtcawCHF6LgOIYKG13Ot3ydsKfgsmtduxQX+9d01Ue6WGNysgJoKG6MMKSHFWqhnC3VnmWLiA6LhoQhkHv583EMoTTra5G7y45ouyopNjEiAnwD6DSprrcu0IU8ybO1zf5oQGvfJcY2S8vhYMKjcfpnTOpjnFD2nJAjmHh4SP4pY+xmDfB4NP55vZMmj/KTv2PkSzxjmn/Ll8Gl+zkDQNPoXdSJK+/4AxPtpdrRLF0bHJc1ndthcOheMdXpPUkCLC38Gz/p295WsH8r/xmI2cBhQZiI/vjB+rJXc1GiSRv2E9fiY/D17tbOsX54be6rh62yhqsXbhz1/JrP9wFxtqyHnr7kwIjHQ3yYxVLeZ6g4jCtlEiOCeQtts2B0IbdPLOSvOT1AfgFoXmwkaQnopfZA4OAY2EKkwDCnh2ZIJKc2d6zgARYkNkACQ2N6YfeP2i7SOaGSYhPVIhnLAznMvMd9iKKt+Hz/AF6/2+y9OgqP08TkDlEQbyP/F/uwyhomAs="
   file_glob: true
   skip_cleanup: true
   file: "package-*-arm64.tar.xz"
