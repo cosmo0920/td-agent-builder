@@ -162,6 +162,7 @@ fi
 
 %files
 %doc README.md
+%license LICENSE
 %defattr(-,root,root,-)
 /opt/*
 %{_sysconfdir}/@PACKAGE@/@PACKAGE@.conf.tmpl
